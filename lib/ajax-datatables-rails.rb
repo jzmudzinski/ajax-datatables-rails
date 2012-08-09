@@ -35,20 +35,20 @@ private
     raise MethodError, "The method `get_raw_records' is not defined."
   end
 
+  def get_raw_record_count
+    filter_records(search_records(get_raw_records)).count
+  end
+
   def filtered_record_count
     search_records(get_raw_records).count
   end
   
   def fetch_records
-    search_records(sort_records(paginate_records(get_raw_records)))
+    search_records(filter_records(sort_records(paginate_records(get_raw_records))))
   end
 
   def paginate_records(records)
     records.page(page).per(per_page)
-  end
-
-  def sort_records(records)
-    records.order("#{sort_column} #{sort_direction}")
   end
 
   def search_records(records)
@@ -59,6 +59,14 @@ private
       records = records.where(query, search: "%#{params[:sSearch]}%")
     end
     return records
+  end
+
+  def sort_records(records)
+    records.order_by(sort_column.to_s => sort_direction)
+  end
+
+  def filter_records(records, filters = nil)
+    records.where(filters)
   end
 
   def page
@@ -74,6 +82,7 @@ private
   end
 
   def sort_direction
-    params[:sSortDir_0] == "desc" ? "DESC" : "ASC"
+    params[:sSortDir_0] == "desc" ? 1 : -1
   end
+
 end
