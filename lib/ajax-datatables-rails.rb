@@ -6,7 +6,7 @@ class AjaxDatatablesRails
 
   VERSION = '0.0.1'
     
-  attr_reader :columns, :model_name, :searchable_columns
+  attr_reader :columns, :model_name, :searchable_columns, :filters_parameter
 
   def initialize(view)
     @view = view
@@ -66,6 +66,7 @@ private
   end
 
   def filter_records(records, filters = nil)
+    filters ||= @filters_parameter ? @view.request.filtered_parameters[@filters_parameter.to_s] : nil
     records.where(filters)
   end
 
