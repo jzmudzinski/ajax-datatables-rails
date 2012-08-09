@@ -40,7 +40,7 @@ private
   end
 
   def filtered_record_count
-    search_records(get_raw_records).count
+    search_records(filter_records(get_raw_records)).count
   end
   
   def fetch_records
