@@ -1,4 +1,5 @@
 # require 'rails'
+require "mongoid_filters"
 
 class AjaxDatatablesRails
   
