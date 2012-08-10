@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+require "active_support"
 require File.expand_path('../lib/ajax-datatables-rails', __FILE__)
 require File.expand_path('../lib/mongoid_filters', __FILE__)
 
