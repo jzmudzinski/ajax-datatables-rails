@@ -1,3 +1,4 @@
+require "activesupport"
 module Mongoid
   module Filters
     extend ActiveSupport::Concern
