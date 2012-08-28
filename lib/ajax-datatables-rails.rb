@@ -4,7 +4,7 @@ class AjaxDatatablesRails
   
   class MethodError < StandardError; end
 
-  VERSION = '0.0.2'
+  VERSION = '0.0.3'
     
   attr_reader :columns, :model_name, :searchable_columns, :filters_parameter
 
