@@ -19,4 +19,5 @@ Gem::Specification.new do |gem|
   
   gem.add_development_dependency "rspec"
   gem.add_dependency "mongoid", ["~> 3.0.0"]
+  gem.add_dependency "active-support"
 end
