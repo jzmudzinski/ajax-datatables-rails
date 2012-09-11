@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
   gem.version       = AjaxDatatablesRails::VERSION
   
   gem.add_development_dependency "rspec"
-  gem.add_dependency "mongoid", ["~> 3.0.0"]
+  gem.add_dependency "mongoid"
   gem.add_dependency "activesupport"
 end
 
