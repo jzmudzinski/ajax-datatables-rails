@@ -7,7 +7,7 @@ module Mongoid
       def filter(attrs)
 
         attrs.each do |method|
-          eval "attr_accessor :#{method}_gte, :#{method}_lte, :#{method}_eq, :#{method}_is_null, :#{method}_in_not_null"
+          eval "attr_accessor :#{method}_gte, :#{method}_lte, :#{method}_eq, :#{method}_is_null, :#{method}_is_not_null"
         end
 
         def filter_criteria(filters = nil)
