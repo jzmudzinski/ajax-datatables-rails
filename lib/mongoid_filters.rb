@@ -18,9 +18,9 @@ module Mongoid
                 if match[2] == "eq"
                   f.merge!({"#{match[1]}" => v})
                 elsif match[2] == "is_null"
-                  f.merge!({"#{match[1]}" => nil })
+                  f.merge!({"#{match[1]}" => nil }) if v.to_i == 1 || v == true || v == "true"
                 elsif match[2] == "is_not_null"
-                  f.merge!({"#{match[1]}" => {"$ne" => nil} })
+                  f.merge!({"#{match[1]}" => {"$ne" => nil} }) if v.to_i == 1 || v == true || v == "true"
                 else
                   f.each_pair{|k,v| found_key = k if k.to_s == match[1] && v.class.name == "Hash"}
                   if found_key
