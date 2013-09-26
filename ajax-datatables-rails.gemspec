@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-# require File.expand_path('../lib/ajax-datatables-rails', __FILE__)
+require File.expand_path('../lib/ajax-datatables-rails', __FILE__)
 # require File.expand_path('../lib/mongoid_filters', __FILE__)
 
 Gem::Specification.new do |gem|
