@@ -1,7 +1,6 @@
-
 module Mongoid
   module Filters
-    extend ActiveSupport::Concern
+    extend ::ActiveSupport::Concern
 
     module ClassMethods
       def filter(attrs)
